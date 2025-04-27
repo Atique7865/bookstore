@@ -22,12 +22,12 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and Push Docker Image
+    - name: Build and Push Docker and Image
       uses: docker/build-push-action@v5
       with:
         context: .
         push: true
-        tags: atique123/bookstore:latest
+        tags: atique123/bookstore1:latest
 
     - name: Deploy to EC2
       uses: appleboy/ssh-action@v0.1.6
@@ -38,5 +38,5 @@ jobs:
         script: |
           docker stop bookstore-container || true
           docker rm bookstore-container || true
-          docker pull atique123/bookstore:latest
-          docker run -d --name bookstore-container -p 80:80 atique123/bookstore:latest
+          docker pull atique123/bookstore1:latest
+          docker run -d --name bookstore-container -p 80:80 atique123/bookstore1:latest
