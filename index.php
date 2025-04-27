@@ -21,7 +21,7 @@ $result = $conn->query($sql);
 <body class="bg-light">
 
 <div class="container mt-5">
-    <h1 class="text-center mb-4">📚 My Book Store</h1>
+    <h1 class="text-center mb-4">📚 My Book Store1</h1>
 
     <div class="text-center mb-4">
         <a href="add.php" class="btn btn-success">➕ Add New Book</a>
